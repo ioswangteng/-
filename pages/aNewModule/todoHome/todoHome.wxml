@@ -1,0 +1,31 @@
+<!--pages/aNewModule/todoHome/todoHome.wxml-->
+<view class='containers'>
+  <view class='header'>
+    <view class='quick'>
+
+      <view class='add'>
+        <text>+</text>
+      </view>
+      <input class='new-quick' value='{{todo}}' placeholder='快速添加。。。' bindinput='inputTodo' bindconfirm='addTodo' auto-focus></input>
+    </view>
+
+    <text class='new' bindtap='createItem'>添加待办</text>
+  </view>
+<block wx:if='{{todo.length}}'>
+<view class='todos'>
+<item wx:for='{{todo}}' wx:key='id' binditemremove='onItemRemove' content='{{item.content}}' tags='{{item.tags}}' extra="{{item.extra}}" finished='{{item.finished}}' bindtap='toggleTodo' data-index='{{index}}'>
+</item>
+</view>
+<view class='footer'></view>
+
+</block>
+<block wx:else>
+<view class='empty'>
+<text class='title'>真棒</text>
+<text class='content'>全部处理完了哟</text>
+</view>
+</block>
+
+
+
+</view>

@@ -1,0 +1,23 @@
+/* pages/aNewModule/todoMe/user/user.wxss */
+.section {
+  display: flex;
+  align-items: center;
+  font-size: 36rpx;
+  padding: 20rpx;
+  border-bottom: 1rpx solid #DDD;
+  color: black;
+}
+
+.section text {
+   flex: 1; 
+}
+
+.section input {
+  width: 400rpx;
+   text-align: right; 
+}
+
+.section image {
+  width: 150rpx;
+  height: 150rpx;
+}

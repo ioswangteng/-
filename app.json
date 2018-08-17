@@ -1,0 +1,65 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/logs/logs",
+    "pages/testView/index",
+    "pages/detialView/detialView",
+    "pages/aNewModule/todoMe/todoMe",
+    "pages/aNewModule/todoHistory/todoHistory",
+    "pages/aNewModule/todoHome/todoHome",
+    "pages/aNewModule/todoMe/setting/setting",
+    "pages/aNewModule/todoMe/user/user",
+    "pages/aNewModule/todoHome/addNewTodo/addNewTodo"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "测试",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "backgroundColor": "#000000",
+    "color": "#dddddd",
+    "selectedColor": "#ffffff",
+    "borderStyle": "black",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "iconPath": "image/ic_home_grey600_24dp@2x.png",
+        "selectedIconPath": "image/ic_home_white@2x.png",
+        "enablePullDownRefresh": true,
+        "backgroundColor": "#f0145a",
+        "text": "首页"
+      },
+      {
+        "pagePath": "pages/testView/index",
+        "iconPath": "image/ic_apps_grey@2x.png",
+        "selectedIconPath": "image/ic_apps_white_24dp@2x.png",
+        "text": "日志"
+      },
+      {
+        "pagePath": "pages/aNewModule/todoHome/todoHome",
+        "iconPath": "image/todo.png",
+        "selectedIconPath": "image/todo-active.png",
+        "text": "待办"
+      },
+      {
+        "pagePath": "pages/aNewModule/todoHistory/todoHistory",
+        "iconPath": "image/history.png",
+        "selectedIconPath": "image/history-active.png",
+        "text": "历史"
+      },
+      {
+        "pagePath": "pages/aNewModule/todoMe/todoMe",
+        "iconPath": "image/me.png",
+        "selectedIconPath": "image/me-active.png",
+        "text": "我的"
+      }
+    ]
+  },
+  "networkTimeout": {
+    "request": 10000,
+    "downloadFile": 10000
+  },
+  "debug": true
+}

@@ -1,0 +1,9 @@
+<view class="page">
+    <view class="page__hd">
+        <view class="page__title" >{{subtitle}}</view>
+         <view class="weui-article__p">
+          <image class='weui-article__img' src='{{img}}' mode='aspectFit' style='height:100rpx'> 
+         </image>  
+         </view> 
+    </view>
+</view>

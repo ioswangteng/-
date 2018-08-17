@@ -1,0 +1,47 @@
+/* pages/aNewModule/todoHome/todoHome.wxss */
+.header{
+   display: flex; 
+   align-items: center;
+}
+.quick{
+  display: flex;
+  flex: 1;
+  align-items: center;
+  border: 1rpx solid #DDD;
+  padding: 20rpx;
+  color: #9b9b9b;
+}
+ .add{
+  width: 40rpx;
+  margin-right: 10rpx;
+  color: green;
+  font-size: 40rpx;
+  font-weight: bold;
+}
+.new-quick{
+   flex: 1; 
+  font-size: 36rpx;
+}
+.new{
+  width: 120rpx;
+  font-size: 30rpx;
+  color: blue;
+  padding-left: 10rpx;
+}
+.empty{
+  display: flex;
+  margin-right: 10rpx;
+  color: rebeccapurple;
+  font-size: 40rpx;
+  font-weight: bold;
+}
+.empty .title {
+  font-size: 60rpx;
+  margin: 200rpx 50rpx 50rpx;
+  color: #9B9B9B;
+}
+
+.empty .content {
+  color: #DDD;
+  text-align: center;
+}

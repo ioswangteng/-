@@ -1,0 +1,22 @@
+/* pages/aNewModule/todoMe/setting/setting.wxss */
+.title{
+  color: #9b9b9b;
+  font-size: 40rpx;
+  margin-top: 10rpx;
+  padding-left: 10rpx;
+  border-left: 10rpx solid #7ED321;
+  font-weight: bold;
+}
+
+.section{
+  display: flex;
+  border-bottom: 1rpx solid #ddd;
+  padding: 20rpx ;
+  align-items: center;
+}
+.section text{
+  flex: 1;
+}
+.section switch{
+  width: 100rpx;
+}

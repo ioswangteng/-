@@ -1,0 +1,17 @@
+.mySwiper{
+   /* background-color: red;  */
+    width: 100%;  
+   margin-bottom: 30rpx; 
+   box-sizing: border-box; 
+   padding: 0 60rpx;
+}
+.swiper-item{
+   display:block;
+  height: 150px; 
+}
+.imge{
+  margin-right: 5px;
+  vertical-align: middle;
+  width:20px; 
+  height: 20px;
+}

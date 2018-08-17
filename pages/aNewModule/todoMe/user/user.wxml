@@ -1,0 +1,12 @@
+<!--pages/aNewModule/todoMe/user/user.wxml-->
+<view class='containers'>
+  <view class='section'>
+    <text>设置头像</text>
+    <image src='{{avatar}}' bindtap='changeAvatar'></image>
+  </view>
+
+<view class='section'>
+<text>设置用户名</text>
+<input value='{{name}}' bindblur='blurName' bindconfirm='changeName' auto-focus></input>
+</view>
+</view>

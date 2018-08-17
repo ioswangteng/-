@@ -1,0 +1,16 @@
+<!--pages/aNewModule/todoMe/todoMe.wxml-->
+<view class='containers'>
+  <view class='avator'>
+    <image class='imge' src='{{myavator}}'></image>
+  </view>
+  <view class='name'>{{name}}</view>
+  <view class='item' data-target='user' bindtap='navTo'>
+   
+    <view class='weui-cell__bd'>个人信息</view>
+    <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+  </view>
+  <view class='item ' data-target='setting' bindtap='navTo'>
+    <view class='weui-cell__bd'>设置</view>
+    <view class='weui-cell__ft weui-cell__ft_in-access'></view>
+  </view>
+</view>

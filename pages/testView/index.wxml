@@ -1,0 +1,47 @@
+ <loading hidden="{{hiddenLoad}}">
+  加载中..
+</loading> 
+<view class='swiper-tab' style='background: #FFF000'>
+  <view class="swiper-tab-list {{currentTab==0 ? 'on':''}}" data-current="0" bindtap='swiperNav'>全部</view>
+  <view class="swiper-tab-list {{currentTab==1 ? 'on':''}}" data-current="1" bindtap='swiperNav'>精选</view>
+</view>
+<swiper class='swiper-box' duration='300' bindchange='bindChange' current='{{currentTab}}' style='height:{{winHeight-31}}rpx'>
+  <swiper-item>
+    <scroll-view class='hot-box' scroll-y='true' upper-threshold='50' lower-threshold='100' bindscrolltolower='scrolltolower'>
+      <swiper class="swiper-boxs" indicator-dots autoplay duration="300">
+        <swiper-item wx:for="{{topStories}}" wx:key="id">
+           <navigator url="../detail/detail?id={{topStories[index].id}}"> 
+            <image mode="aspectFill" class="swiper-boxs-img" src="{{topStories[index].image}}" />
+          </navigator> 
+        </swiper-item>
+        <image style='background: #FFF000'></image>
+      </swiper>
+      <view class='themes-box-top'>
+        <text class='themes-box-title'>专栏</text>
+        <view class='themes-box-subtitle'>
+          <text class=''>你说你想</text>
+          <navigator style='display:inline'  open-type='navigateTo' hover-class='nav-hover'  class='nav-default' bindtap='knowtap'   data-knowId="1234">知道什么</navigator>
+          <text>吧</text>
+        </view>
+      </view>
+
+      <!-- 专栏列表-->
+
+      <view class='themes-list'>
+        <view class='themes-list-box' wx:for="{{columnData}}" wx:key='guid'>
+          <navigator url=''>
+            <view class='themes-list-thumbnail'>
+            </view>
+            <view class='themes-list-main'>
+              <view class='themes-list-name'>{{item.title}}</view>
+              <view class='themes-list-description'> {{item.subtitle}}</view>
+            </view>
+          </navigator>
+        </view>
+      </view>
+    </scroll-view>
+  </swiper-item>
+  <swiper-item data-current="1">
+    <view style='background: #F8F8F8'>测试 二</view>
+  </swiper-item>
+</swiper>
