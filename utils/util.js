@@ -17,8 +17,6 @@ const formatNumber = n => {
 module.exports = {
   formatTime: formatTime
 }
-
-
 function request(url, params, success, fail) {
   this.requestLoading(url, params, "", success, fail)
 }
