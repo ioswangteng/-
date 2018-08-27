@@ -25,8 +25,9 @@ Page({
       finished: false,
       id: +new Date()
     };
-
+    console.log(todo);
     todos.push(todo);
+    console.log(todos);
     this.setData({
       todo: '',
       todos: todos,
@@ -38,10 +39,10 @@ Page({
   save: function () {
     wx.setStorageSync('todo', this.data.todos);
   },
-  createItem:function(e){
-wx.navigateTo({
-  url: '/pages/aNewModule/todoHome/addNewTodo/addNewTodo',
-})
+  createItem: function (e) {
+    wx.navigateTo({
+      url: '/pages/aNewModule/todoHome/addNewTodo/addNewTodo',
+    })
   },
   /**
    * 生命周期函数--监听页面加载
