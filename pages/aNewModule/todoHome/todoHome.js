@@ -1,9 +1,4 @@
-// pages/aNewModule/todoHome/todoHome.js
 Page({
-
-  /**
-   * 页面的初始数据
-   */
   data: {
     todo: '',
     todos: [],
@@ -12,22 +7,52 @@ Page({
     allSetting: true,
     clearSetting: true
   },
+
+  save: function () {
+    wx.setStorageSync('todos', this.data.todos);
+  },
+
+  onShow: function () {
+    var todos = wx.getStorageSync('todos');
+    if (todos) {
+      var leftCount = todos.filter(function (item) {
+        return !item.finished;
+      }).length;
+      this.setData({ todos: todos, leftCount: leftCount, allFinished: !leftCount });
+    }
+
+    var allSetting = wx.getStorageSync('allSetting');
+    if (typeof allSetting == 'boolean') {
+      this.setData({ allSetting: allSetting });
+    }
+
+    var clearSetting = wx.getStorageSync('clearSetting');
+    if (typeof clearSetting == 'boolean') {
+      this.setData({ clearSetting: clearSetting });
+    }
+  },
+
+  onItemRemove: function (e) {
+    var index = e.currentTarget.dataset.index;
+    var todos = this.data.todos;
+    var remove = todos.splice(index, 1)[0];
+    this.setData({
+      todos: todos,
+      leftCount: this.data.leftCount - (remove.finished ? 0 : 1)
+    });
+    this.save();
+    getApp().writeHistory(remove, 'delete', +new Date());
+  },
+
   inputTodo: function (e) {
-    console.log(e.detail.value);
     this.setData({ todo: e.detail.value });
   },
+
   addTodo: function (e) {
-    if (!this.data.todo || !this.data.todo.trim())
-      return;
+    if (!this.data.todo || !this.data.todo.trim()) return;
     var todos = this.data.todos;
-    var todo = {
-      content: this.data.todo,
-      finished: false,
-      id: +new Date()
-    };
-    console.log(todo);
+    var todo = { content: this.data.todo, finished: false, id: +new Date() };
     todos.push(todo);
-    console.log(todos);
     this.setData({
       todo: '',
       todos: todos,
@@ -36,98 +61,48 @@ Page({
     this.save();
     getApp().writeHistory(todo, 'create', +new Date());
   },
-  save: function () {
-    wx.setStorageSync('todo', this.data.todos);
+
+  toggleTodo: function (e) {
+    var index = e.currentTarget.dataset.index;
+    var todos = this.data.todos;
+    var todo = todos[index];
+    todo.finished = !todo.finished;
+    var leftCount = this.data.leftCount + (todo.finished ? -1 : 1);
+    this.setData({
+      todos: todos,
+      leftCount: leftCount,
+      allFinished: !leftCount
+    });
+    this.save();
+    getApp().writeHistory(todo, todo.finished ? 'finish' : 'restart', +new Date());
   },
-  createItem: function (e) {
-    wx.navigateTo({
-      url: '/pages/aNewModule/todoHome/addNewTodo/addNewTodo',
+
+  toggleAll: function (e) {
+    var allFinished = !this.data.allFinished;
+    var todos = this.data.todos.map(function (todo) {
+      todo.finished = allFinished;
+      return todo;
+    });
+    this.setData({
+      todos: todos,
+      leftCount: allFinished ? 0 : todos.length,
+      allFinished: allFinished
     })
-  },
-  /**
-   * 生命周期函数--监听页面加载
-   */
-  onLoad: function (options) {
-
+    this.save();
+    getApp().writeHistory(null, allFinished ? 'finishAll' : 'restartAll', +new Date());
   },
 
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
-
+  clearFinished: function (e) {
+    var todos = this.data.todos;
+    var remains = todos.filter(function (todo) {
+      return !todo.finished;
+    });
+    this.setData({ todos: remains });
+    this.save();
+    getApp().writeHistory(null, 'clear', +new Date());
   },
 
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function () {
-    var todos = wx.getStorageSync('todos');
-    if (todos) {
-      var leftCount = todos.filter(function (item) {
-        return !item.finished;
-      }).length;
-
-      this.setData({
-        todos: todos,
-        leftCount: leftCount,
-        allFinished: !leftCount
-      });
-
-      var allSetting = wx.getStorageSync('allSetting');
-      if (typeof allSetting == 'boolean') {
-        this.setData({
-          allSetting: allSetting
-        });
-      }
-
-      var clearSetting = wx.getStorageSync('clearSetting');
-      if (typeof clearSetting == 'boolean') {
-        this.setData({
-          clearSetting: clearSetting
-        });
-      }
-
-
-    }
-
-
-
-
-  },
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
-
-  },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
-
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
-
+  createItem: function (e) {
+    wx.navigateTo({ url: '/pages/detail/detail' })
   }
 })

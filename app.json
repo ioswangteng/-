@@ -9,13 +9,15 @@
     "pages/aNewModule/todoHome/todoHome",
     "pages/aNewModule/todoMe/setting/setting",
     "pages/aNewModule/todoMe/user/user",
-    "pages/aNewModule/todoHome/addNewTodo/addNewTodo"
+    "pages/aNewModule/todoHome/addNewTodo/addNewTodo",
+    "pages/testView/button/button"
   ],
   "window": {
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#fff",
     "navigationBarTitleText": "测试",
-    "navigationBarTextStyle": "black"
+    "navigationBarTextStyle": "black",
+    "enablePullDownRefresh": false
   },
   "tabBar": {
     "backgroundColor": "#000000",

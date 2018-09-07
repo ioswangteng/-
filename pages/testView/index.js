@@ -10,19 +10,19 @@ Page({
     currentTab: 0,
     hiddenLoad: false,
 
-    topStories:[
+    topStories: [
       {
-        id : 0,
-        image : 'http://img02.tooopen.com/images/20150928/tooopen_sy_143912755726.jpg'
+        id: 0,
+        image: 'http://img02.tooopen.com/images/20150928/tooopen_sy_143912755726.jpg'
       },
 
       {
-        id : 1,
-        image : 'http://img06.tooopen.com/images/20160818/tooopen_sy_175866434296.jpg'
+        id: 1,
+        image: 'http://img06.tooopen.com/images/20160818/tooopen_sy_175866434296.jpg'
       },
       {
-        id : 2,
-        image : 'http://img06.tooopen.com/images/20160818/tooopen_sy_175833047715.jpg'
+        id: 2,
+        image: 'http://img06.tooopen.com/images/20160818/tooopen_sy_175833047715.jpg'
       },
     ],
 
@@ -77,14 +77,57 @@ Page({
         title: "养生是门学问",
         subtitle: "健康永远是第一位的，工作学习之余一定注意养生，养生从当下开始"
       }
+    ],
+    list: [
+      {
+        id: 'form',
+        name: '表单啊',
+        open: false,
+        pages: ["button", "list", "input", "slider", "uploader"]
+      }, {
+        id: 'widget',
+        name: '基础组件',
+        open: false,
+        pages: ["article", "badge", "flex", "footer", "gallery", "grid", "icons", "loadmore", "panel", "preview", "progress"]
+      }, {
+        id: "feedback",
+        name: "操作反馈",
+        open: false,
+        pages: ["actionsheet", "dialog", "msg", "picker", "toast"]
+      }, {
+        id: "nav",
+        name: "导航相关",
+        open: false,
+        pages: ["navbar", "tabbar"]
+      }, {
+        id: "search",
+        name: "搜索相关",
+        open: false,
+        pages: ["searchbar"]
+      }
     ]
   },
-  knowtap:function(e){
+  kindToggle: function (e) {
+    var id = e.currentTarget.id,
+      list = this.data.list;
+    for (var i = 0, len = list.length; i < len; ++i) {
+
+if(list[i].id==id){
+list[i].open=!list[i].open;
+}else{
+  list[i].open=false
+}
+    }
+    this.setData({
+      list:list
+    });
+  },
+  knowtap: function (e) {
     var knowID = e.currentTarget.dataset.knowId;
-    console.log("问问我我我我"+knowID);
-  wx.navigateTo({
-    url:'../detialView/detialView' ,
-  })
+    console.log("问问我我我我" + knowID);
+    wx.navigateTo({
+      url: '../detialView/detialView',
+    })
   },
   bindChange: function (e) {
     var that = this;
@@ -100,7 +143,7 @@ Page({
         hiddenLoad: true
       })
     }, 500);
-    
+
   },
   /**
       * 点击tab切换

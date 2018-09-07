@@ -1,26 +1,28 @@
- <loading hidden="{{hiddenLoad}}">
+<loading hidden="{{hiddenLoad}}">
   加载中..
-</loading> 
+</loading>
 <view class='swiper-tab' style='background: #FFF000'>
   <view class="swiper-tab-list {{currentTab==0 ? 'on':''}}" data-current="0" bindtap='swiperNav'>全部</view>
   <view class="swiper-tab-list {{currentTab==1 ? 'on':''}}" data-current="1" bindtap='swiperNav'>精选</view>
 </view>
+
 <swiper class='swiper-box' duration='300' bindchange='bindChange' current='{{currentTab}}' style='height:{{winHeight-31}}rpx'>
   <swiper-item>
     <scroll-view class='hot-box' scroll-y='true' upper-threshold='50' lower-threshold='100' bindscrolltolower='scrolltolower'>
       <swiper class="swiper-boxs" indicator-dots autoplay duration="300">
         <swiper-item wx:for="{{topStories}}" wx:key="id">
-           <navigator url="../detail/detail?id={{topStories[index].id}}"> 
+          <navigator url="../detail/detail?id={{topStories[index].id}}">
             <image mode="aspectFill" class="swiper-boxs-img" src="{{topStories[index].image}}" />
-          </navigator> 
+          </navigator>
         </swiper-item>
         <image style='background: #FFF000'></image>
       </swiper>
+
       <view class='themes-box-top'>
         <text class='themes-box-title'>专栏</text>
         <view class='themes-box-subtitle'>
           <text class=''>你说你想</text>
-          <navigator style='display:inline'  open-type='navigateTo' hover-class='nav-hover'  class='nav-default' bindtap='knowtap'   data-knowId="1234">知道什么</navigator>
+          <navigator style='display:inline' open-type='navigateTo' hover-class='nav-hover' class='nav-default' bindtap='knowtap' data-knowId="1234">知道什么</navigator>
           <text>吧</text>
         </view>
       </view>
@@ -41,7 +43,44 @@
       </view>
     </scroll-view>
   </swiper-item>
+
   <swiper-item data-current="1">
-    <view style='background: #F8F8F8'>测试 二</view>
+
+    <scroll-view class='hot-box' scroll-y='true' upper-threshold='50' lower-threshold='100' bindscrolltolower='scrolltolower'>
+      <view class='page'>
+        <view class='page__hd'>
+          <view class='page__title'>我的测试</view>
+
+          <view class='page__desc'> 我寻思测试一下看看什么效果唻，你却挥挥衣袖对我说：赶紧练功去！练功必须要顶！d=====(￣▽￣*)b太阳~习武先习德，学艺先学礼。武德比山重，名利草芥轻。</view>
+        </view>
+
+        <view class='page__bd page__bd_spacing'>
+          <!-- <view class="kind-list"> -->
+          <view class="">
+            <view class='themes-list-box' wx:for="{{list}}" wx:key="id">
+
+              <view class='kind-list__item'>
+                <view id='{{item.id}}' class='weui-flex kind-list__item-hd {{item.open ? "kind-list__item-hb_show" : ""}}' bindtap='kindToggle'>
+                  <view class="weui-flex__item">{{item.name}}</view>
+                  <image class="kind-list__img" src="../../image/icon_nav_{{item.id}}.png"></image>
+                </view>
+
+                <view class='kind-list__item-bd {{item.open ? "kind-list__item-bd_show" : "" }}'>
+
+                  <view class='weui-cells {{item.open? "weui-cell_show":""}}'>
+                    <block wx:for="{{item.pages}}" wx:for-item="page" wx:key="*this">
+                      <navigator url='{{page}}/{{page}}' class='weui-cell weui-cell_access'>
+                        <view class='weui-cell__bd'>{{page}}</view>
+                        <view class='weui-cell__ft weui-cell__ft_in-access'></view>
+                      </navigator>
+                    </block>
+                  </view>
+                </view>
+              </view>
+            </view>
+          </view>
+        </view>
+      </view>
+    </scroll-view>
   </swiper-item>
 </swiper>
