@@ -1,2 +1,28 @@
 <!--pages/testView/button/button.wxml-->
-<text>pages/testView/button/button.wxml</text>
+<view class='page'>
+  <view class='page__hd'>
+    <view class='page__title'>按钮模块</view>
+    <view class='page__desc'> 按钮啊，这里采用小程序原生的按钮为主，加入了一些间距的样式哈。</view>
+  </view>
+
+  <view class='page__bd page__bd_spacing'>
+  <button class='weui-btn' type='primary'>主按钮 Normal</button>
+  <button class='weui-btn' type='primary' disabled='true'>主按钮 Disabled</button>
+
+  <button class='weui-btn' type='default'>次按钮 Normal</button>
+  <button class='weui-btn' type='default' disabled='true'>次按钮 Disabled</button>
+
+  <button class='weui-btn'  type='warn'>警告按钮 Normal</button>
+  <button class='weui-btn' type='warn' disabled='true'>警告按钮 Disabled</button>
+
+  <view class='button-sp-aea'>
+  <button class='weui-btn' type='primary' plain='true'>按钮</button>
+  <button class='weui-btn' type='primary' plain='true' disabled='true'> anniu</button>
+  <button class='weui-btn' type='default' plain='true'> anniu</button>
+  <button class='weui-btn' type='default' plain='true' disabled='true'>anniu</button>
+  <button class='weui-btn mini-btn' type='primary' size='mini'>anniu</button>
+  <button class="weui-btn mini-btn" type="default" size="mini">按钮</button>
+ <button class="weui-btn mini-btn" type="warn" size="mini">按钮</button>
+  </view>
+  </view>
+</view>

@@ -10,7 +10,8 @@
     "pages/aNewModule/todoMe/setting/setting",
     "pages/aNewModule/todoMe/user/user",
     "pages/aNewModule/todoHome/addNewTodo/addNewTodo",
-    "pages/testView/button/button"
+    "pages/testView/button/button",
+    "pages/testView/list/list"
   ],
   "window": {
     "backgroundTextStyle": "light",

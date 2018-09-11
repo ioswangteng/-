@@ -1,1 +1,9 @@
 /* pages/testView/button/button.wxss */
+.button-sp-aea{
+  width: 60%;
+  padding-top: 15px;
+  margin: 0 auto;
+}
+.mini-btn{
+  margin-right: 15px;
+}
