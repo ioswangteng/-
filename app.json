@@ -12,7 +12,8 @@
     "pages/aNewModule/todoHome/addNewTodo/addNewTodo",
     "pages/testView/button/button",
     "pages/testView/list/list",
-    "pages/testView/input/input"
+    "pages/testView/input/input",
+    "pages/testView/slider/slider"
   ],
   "window": {
     "backgroundTextStyle": "light",

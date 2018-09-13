@@ -1,0 +1,13 @@
+<!--pages/testView/slider/slider.wxml-->
+<view class='page'>
+
+  <view class='page__hd'>
+    <view class='page__title'>slider</view>
+    <view class='page__desc'>滑块，这里采用小程序原生的slider。</view>
+  </view>
+<view class='page__bd page__bd_spacing'>
+<slider show-value value='90'></slider>
+<slider></slider>
+</view>
+
+</view>
