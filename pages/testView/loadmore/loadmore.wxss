@@ -1,0 +1,4 @@
+/* pages/testView/loadmore/loadmore.wxss */
+.page{
+    background-color: #FFFFFF;
+}

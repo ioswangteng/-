@@ -1,0 +1,32 @@
+/* pages/testView/icons/icons.wxss */
+.icon{
+  margin-right: 13px;
+}
+ .page__bd{
+  padding-left: 40px;
+  padding-right: 40px;
+  text-align: left;
+} 
+.icon-box{
+  margin-bottom: 25px;
+  display: flex;
+  align-items: center;
+}
+.icon-box__ctn{
+
+margin-left: 10px;
+   flex-shrink: 100; 
+}
+.icon-box__title{
+  font-size: 20px;
+}
+.icon-box__desc{
+  margin-top: 6px;
+  font-size: 12px;
+  color: #888888;
+}
+.icon_sp_area{
+  margin-top:10px;
+  margin-left: 10px;
+  text-align: left;
+}

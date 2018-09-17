@@ -20,7 +20,10 @@
     "pages/testView/flex/flex",
     "pages/testView/footer/footer",
     "pages/testView/gallery/gallery",
-    "pages/testView/grid/grid"
+    "pages/testView/grid/grid",
+    "pages/testView/icons/icons",
+    "pages/testView/loadmore/loadmore",
+    "pages/testView/panel/panel"
   ],
   "window": {
     "backgroundTextStyle": "light",
