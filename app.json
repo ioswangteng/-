@@ -13,7 +13,14 @@
     "pages/testView/button/button",
     "pages/testView/list/list",
     "pages/testView/input/input",
-    "pages/testView/slider/slider"
+    "pages/testView/slider/slider",
+    "pages/testView/uploader/uploader",
+    "pages/testView/article/article",
+    "pages/testView/badge/badge",
+    "pages/testView/flex/flex",
+    "pages/testView/footer/footer",
+    "pages/testView/gallery/gallery",
+    "pages/testView/grid/grid"
   ],
   "window": {
     "backgroundTextStyle": "light",
