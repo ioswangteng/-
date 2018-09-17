@@ -1,1 +1,4 @@
 /* pages/testView/panel/panel.wxss */
+.weui-media-box__info{
+  margin-left: 16px;
+}

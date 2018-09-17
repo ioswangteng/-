@@ -1,2 +1,58 @@
 <!--pages/testView/panel/panel.wxml-->
-<text>pages/testView/panel/panel.wxml</text>
+<view class='page'>
+
+  <view class='page__hd'>
+    <view class='page__title'>Panel</view>
+    <view class='page__desc'>面板</view>
+  </view>
+
+  <view class='page__bd'>
+    <view class='weui-panel weui-panel_access'>
+      <view class='weui-panel__hd'>图文组合列表</view>
+      <view class='weui-panel__bd'>
+
+        <navigator url='' class='weui-media-box weui-media-box_appmsg' hover-class='weui-cell_active'>
+
+          <view class='weui-media-box__hd weui-media-box__hd weui-media-box__hd_in-appmsg'>
+            <image class='weui-media-box__thumb' src='../../../image/pic_160.png'> </image>
+          </view>
+
+          <view class='weui-media-box__bd weui-media-box__bd_in-appmsg'>
+            <view class='weui-media-box__title'>标题一</view>
+            <view class='weui-media-box__desc'>你说的是真的嘛？我想问这是真的嘛？我就想问这是真的嘛？</view>
+          </view>
+          <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+        </navigator>
+
+        <navigator url='' class='weui-cell weui-cell_access' hover-class='weui-cell_active'>
+          <view class='weui-media-box weui-media-box_text'>
+            <view class='weui-media-box__title weui-media-box__title_in-text'>测试标题</view>
+            <view class='weui-media-box__desc'>我就想知道这是不是真的我也好想上学啊我想忘掉一切不开心无忧无虑的上学</view>
+          </view>
+          <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+        </navigator>
+
+
+        <view class='weui-panel'>
+
+          <view class='weui-media-box weui-media-box__title_in-text '>
+            <view class='weui-media-box__title weui-media__title_in-text'>标题一</view>
+            <view class='weui-media-box__desc'>山水间歌声回荡回荡思念的滚烫别来无恙你在心上夜空中最亮的星</view>
+          </view>
+
+          <view class='weui-media-box__info'>
+            <view class='weui-media-box__info__meta'>文字来源</view>
+            <view class='weui-media-box__info__meta'>时间</view>
+            <view class='weui-media-box__info__meta weui-media-box__info__meta_extra'>其他信息</view>
+          </view>
+
+        </view>
+
+
+      </view>
+
+    </view>
+
+  </view>
+
+</view>

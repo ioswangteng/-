@@ -23,7 +23,12 @@
     "pages/testView/grid/grid",
     "pages/testView/icons/icons",
     "pages/testView/loadmore/loadmore",
-    "pages/testView/panel/panel"
+    "pages/testView/panel/panel",
+    "pages/testView/preview/preview",
+    "pages/testView/progress/progress",
+    "pages/testView/actionsheet/actionsheet",
+    "pages/testView/dialog/dialog",
+    "pages/testView/msg/msg"
   ],
   "window": {
     "backgroundTextStyle": "light",
