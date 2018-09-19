@@ -1,26 +1,33 @@
-// pages/testView/msg/msg.js
+// pages/testView/picker/picker.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-
+    array: ["aa", 'bb', "cc", "dd"],
+    index: 0,
+    date: '2018-09-01',
+    time: '12:01'
   },
+  bindPickerChange: function (e) {
+    console.log('picker发送选择改变，携带值为', e.detail.value)
 
-  openSuccess: function (options) {
-
-    wx.navigateTo({
-      url: 'msg_success',
+    this.setData({
+      index: e.detial.value
     })
   },
+  bindTimeChange: function (e) {
+    this.setData({
+      time: e.detail.value
+    });
+  },
+  bindDateChange: function (e) {
+    this.setData({
 
-  openFail: function (options) {
-    wx.navigateTo({
-      url: 'msg_fail',
+      date: e.detail.value
     })
   },
-
   /**
    * 生命周期函数--监听页面加载
    */

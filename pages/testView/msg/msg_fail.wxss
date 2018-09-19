@@ -1,0 +1,4 @@
+/* pages/testView/msg/msg_fail.wxss */
+.page{
+   background-color: #FFFFFF;
+}
