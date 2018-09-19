@@ -34,7 +34,8 @@
     "pages/testView/msg/msg_fail",
     "pages/testView/toast/toast",
     "pages/testView/navbar/navbar",
-    "pages/testView/tabbar/tabbar"
+    "pages/testView/tabbar/tabbar",
+    "pages/testView/searchbar/searchbar"
   ],
   "window": {
     "backgroundTextStyle": "light",
