@@ -47,7 +47,7 @@ Page({
       Params: ''
     }, '正在加载数据', function (res) {
       //res就是我们请求接口返回的数据
-      console.log("呃呃呃呃呃呃" + res.DATA)
+      console.log("呃呃呃呃呃呃" + res.openid)
       lists = res.DATA
       that.setData({
         lists: lists

@@ -1,7 +1,7 @@
 <loading hidden="{{hiddenLoad}}">
   加载中..
 </loading>
-<view class='swiper-tab' style='background: #FFF000'>
+<view class='swiper-tab' style='background: #ffffff'>
   <view class="swiper-tab-list {{currentTab==0 ? 'on':''}}" data-current="0" bindtap='swiperNav'>全部</view>
   <view class="swiper-tab-list {{currentTab==1 ? 'on':''}}" data-current="1" bindtap='swiperNav'>精选</view>
 </view>
